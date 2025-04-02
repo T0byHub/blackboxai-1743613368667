@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video - VideoShare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .dropzone {
+            border: 2px dashed #9CA3AF;
+            transition: all 0.3s;
+        }
+        .dropzone.active {
+            border-color: #3B82F6;
+            background-color: #EFF6FF;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header (same as index.html) -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-video text-blue-600 text-2xl"></i>
+                <h1 class="text-xl font-bold text-gray-800">VideoShare</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-user-circle text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Upload Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Upload Your Video</h2>
+            
+            <!-- Upload Card -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <!-- Progress Bar -->
+                <div class="h-1 bg-gray-200 hidden" id="progressBar">
+                    <div class="h-full bg-blue-600" id="progress" style="width: 0%"></div>
+                </div>
+                
+                <!-- Upload Steps -->
+                <div class="p-6">
+                    <!-- Step 1: Select Video -->
+                    <div id="step1">
+                        <div class="dropzone rounded-lg p-8 text-center cursor-pointer mb-6" id="dropzone">
+                            <i class="fas fa-cloud-upload-alt text-4xl text-blue-500 mb-4"></i>
+                            <h3 class="text-lg font-semibold mb-2">Drag and drop video files here</h3>
+                            <p class="text-gray-500 mb-4">or</p>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium">
+                                Select Files
+                            </button>
+                            <p class="text-gray-500 text-sm mt-4">MP4, WebM or AVI. Max 500MB.</p>
+                            <input type="file" id="fileInput" class="hidden" accept="video/*">
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Video Details (hidden initially) -->
+                    <div id="step2" class="hidden">
+                        <div class="flex flex-col md:flex-row gap-6 mb-6">
+                            <!-- Video Preview -->
+                            <div class="md:w-1/2">
+                                <div class="bg-black rounded-lg overflow-hidden aspect-video">
+                                    <video id="videoPreview" controls class="w-full h-full"></video>
+                                </div>
+                            </div>
+                            
+                            <!-- Video Details Form -->
+                            <div class="md:w-1/2">
+                                <div class="space-y-4">
+                                    <div>
+                                        <label for="title" class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+                                        <input type="text" id="title" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                                    </div>
+                                    <div>
+                                        <label for="description" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                                        <textarea id="description" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="tags" class="block text-sm font-medium text-gray-700 mb-1">Tags</label>
+                                        <input type="text" id="tags" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Separate tags with commas">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Visibility</label>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center">
+                                                <input type="radio" id="public" name="visibility" value="public" checked class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                                <label for="public" class="ml-2 block text-sm text-gray-700">Public (Anyone can view)</label>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <input type="radio" id="unlisted" name="visibility" value="unlisted" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                                <label for="unlisted" class="ml-2 block text-sm text-gray-700">Unlisted (Only people with link can view)</label>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <input type="radio" id="private" name="visibility" value="private" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                                <label for="private" class="ml-2 block text-sm text-gray-700">Private (Only you can view)</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-end space-x-3">
+                            <button id="cancelBtn" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
+                                Cancel
+                            </button>
+                            <button id="uploadBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium">
+                                Upload
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // DOM Elements
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('fileInput');
+        const step1 = document.getElementById('step1');
+        const step2 = document.getElementById('step2');
+        const videoPreview = document.getElementById('videoPreview');
+        const progressBar = document.getElementById('progressBar');
+        const progress = document.getElementById('progress');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+
+        // Event Listeners
+        dropzone.addEventListener('click', () => fileInput.click());
+        
+        fileInput.addEventListener('change', handleFileSelect);
+        
+        dropzone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropzone.classList.add('active');
+        });
+        
+        dropzone.addEventListener('dragleave', () => {
+            dropzone.classList.remove('active');
+        });
+        
+        dropzone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropzone.classList.remove('active');
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                handleFileSelect({ target: fileInput });
+            }
+        });
+        
+        uploadBtn.addEventListener('click', startUpload);
+        cancelBtn.addEventListener('click', resetUpload);
+
+        // Functions
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            // Validate file type
+            if (!file.type.match('video.*')) {
+                alert('Please select a video file');
+                return;
+            }
+            
+            // Validate file size (500MB max)
+            if (file.size > 500 * 1024 * 1024) {
+                alert('File size exceeds 500MB limit');
+                return;
+            }
+            
+            // Show video preview
+            const videoURL = URL.createObjectURL(file);
+            videoPreview.src = videoURL;
+            
+            // Move to step 2
+            step1.classList.add('hidden');
+            step2.classList.remove('hidden');
+            progressBar.classList.remove('hidden');
+        }
+        
+        function startUpload() {
+            // Simulate upload progress
+            let progressValue = 0;
+            const interval = setInterval(() => {
+                progressValue += Math.random() * 10;
+                if (progressValue >= 100) {
+                    progressValue = 100;
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        alert('Upload complete!');
+                        resetUpload();
+                    }, 500);
+                }
+                progress.style.width = `${progressValue}%`;
+            }, 500);
+            
+            uploadBtn.disabled = true;
+            uploadBtn.textContent = 'Uploading...';
+        }
+        
+        function resetUpload() {
+            fileInput.value = '';
+            videoPreview.src = '';
+            progress.style.width = '0%';
+            step1.classList.remove('hidden');
+            step2.classList.add('hidden');
+            progressBar.classList.add('hidden');
+            uploadBtn.disabled = false;
+            uploadBtn.textContent = 'Upload';
+        }
+    </script>
+</body>
+</html>
