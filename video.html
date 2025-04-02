@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Sunset at Beach - VideoShare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header (same as index.html) -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-video text-blue-600 text-2xl"></i>
+                <h1 class="text-xl font-bold text-gray-800">VideoShare</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search videos..." 
+                           class="pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-64">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+                <button class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-user-circle text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Video Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Video Player Section -->
+            <div class="lg:w-2/3">
+                <!-- Video Player -->
+                <div class="bg-black rounded-xl overflow-hidden aspect-video mb-4">
+                    <video controls class="w-full h-full">
+                        <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <!-- Video Info -->
+                <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+                    <h1 class="text-2xl font-bold mb-2">Amazing Sunset at Beach</h1>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-gray-600">1.2M views</span>
+                            <span class="text-gray-600">•</span>
+                            <span class="text-gray-600">3 days ago</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <button class="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
+                                <i class="far fa-thumbs-up"></i>
+                                <span>124K</span>
+                            </button>
+                            <button class="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
+                                <i class="far fa-thumbs-down"></i>
+                                <span>1.2K</span>
+                            </button>
+                            <button class="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
+                                <i class="fas fa-share"></i>
+                                <span>Share</span>
+                            </button>
+                            <button class="flex items-center space-x-1 text-gray-700 hover:text-blue-600">
+                                <i class="far fa-bookmark"></i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Channel Info -->
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Channel" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">NatureVideos</h3>
+                                <p class="text-gray-500 text-sm">245K subscribers</p>
+                            </div>
+                        </div>
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full font-medium">
+                            Subscribe
+                        </button>
+                    </div>
+                    
+                    <!-- Video Description -->
+                    <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                        <div class="flex items-center space-x-4 mb-2">
+                            <span class="font-medium">Description</span>
+                            <span class="text-gray-500 text-sm">•</span>
+                            <span class="text-gray-500 text-sm">Show more</span>
+                        </div>
+                        <p class="text-gray-800">
+                            Beautiful sunset captured at Malibu Beach during golden hour. 
+                            Filmed with Sony A7III and 24-70mm lens. 
+                            <br><br>
+                            Don't forget to like and subscribe for more nature videos!
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Comments Section -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold">Comments (1,243)</h2>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-sort text-gray-500"></i>
+                            <span class="text-gray-600">Sort by</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Add Comment -->
+                    <div class="flex items-start space-x-3 mb-6">
+                        <div class="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <input type="text" placeholder="Add a comment..." class="w-full border-b border-gray-300 pb-2 focus:outline-none focus:border-blue-500">
+                        </div>
+                    </div>
+                    
+                    <!-- Comment List -->
+                    <div class="space-y-4">
+                        <!-- Comment 1 -->
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="User" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <h4 class="font-semibold">JohnDoe123</h4>
+                                    <p class="text-gray-800">This is absolutely breathtaking! The colors are amazing. Where exactly was this filmed?</p>
+                                    <div class="flex items-center space-x-4 mt-2">
+                                        <button class="text-gray-500 hover:text-blue-600 text-sm">
+                                            <i class="far fa-thumbs-up"></i> 245
+                                        </button>
+                                        <button class="text-gray-500 hover:text-blue-600 text-sm">
+                                            <i class="far fa-thumbs-down"></i> 2
+                                        </button>
+                                        <button class="text-gray-500 hover:text-blue-600 text-sm">
+                                            Reply
+                                        </button>
+                                        <span class="text-gray-400 text-sm">2 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Comment 2 -->
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/women/23.jpg" alt="User" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <h4 class="font-semibold">TravelLover</h4>
+                                    <p class="text-gray-800">I was there last summer! The sunset views are even better in person. Great video!</p>
+                                    <div class="flex items-center space-x-4 mt-2">
+                                        <button class="text-gray-500 hover:text-blue-600 text-sm">
+                                            <i class="far fa-thumbs-up"></i> 189
+                                        </button>
+                                        <button class="text-gray-500 hover:text-blue-600 text-sm">
+                                            <i class="far fa-thumbs-down"></i> 0
+                                        </button>
+                                        <button class="text-gray-500 hover:text-blue-600 text-sm">
+                                            Reply
+                                        </button>
+                                        <span class="text-gray-400 text-sm">1 day ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="mt-4 text-blue-600 font-medium">Show more comments</button>
+                </div>
+            </div>
+            
+            <!-- Related Videos Sidebar -->
+            <div class="lg:w-1/3">
+                <div class="sticky top-4 space-y-4">
+                    <h2 class="text-xl font-semibold">Related Videos</h2>
+                    
+                    <!-- Related Video 1 -->
+                    <div class="flex gap-3">
+                        <div class="w-40 h-24 bg-gray-200 rounded-lg overflow-hidden relative">
+                            <img src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg" class="w-full h-full object-cover" alt="Related video">
+                            <div class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-xs px-1 rounded">
+                                8:32
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-800 line-clamp-2">Ocean Waves Crashing on Rocks</h3>
+                            <p class="text-gray-600 text-sm">NatureSounds</p>
+                            <p class="text-gray-500 text-xs">456K views • 2 weeks ago</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Related Video 2 -->
+                    <div class="flex gap-3">
+                        <div class="w-40 h-24 bg-gray-200 rounded-lg overflow-hidden relative">
+                            <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" class="w-full h-full object-cover" alt="Related video">
+                            <div class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-xs px-1 rounded">
+                                12:15
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-800 line-clamp-2">Mountain Sunrise Time Lapse</h3>
+                            <p class="text-gray-600 text-sm">ScenicViews</p>
+                            <p class="text-gray-500 text-xs">789K views • 1 month ago</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Related Video 3 -->
+                    <div class="flex gap-3">
+                        <div class="w-40 h-24 bg-gray-200 rounded-lg overflow-hidden relative">
+                            <img src="https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg" class="w-full h-full object-cover" alt="Related video">
+                            <div class="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-xs px-1 rounded">
+                                6:45
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-800 line-clamp-2">Desert Sand Dunes at Sunset</h3>
+                            <p class="text-gray-600 text-sm">NatureExplorer</p>
+                            <p class="text-gray-500 text-xs">321K views • 3 weeks ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Basic functionality for like buttons
+        document.querySelectorAll('.fa-thumbs-up, .fa-thumbs-down').forEach(icon => {
+            icon.addEventListener('click', function() {
+                if (this.classList.contains('far')) {
+                    this.classList.remove('far');
+                    this.classList.add('fas');
+                } else {
+                    this.classList.remove('fas');
+                    this.classList.add('far');
+                }
+            });
+        });
+
+        // Search functionality
+        document.querySelector('input[type="text"]').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.trim();
+                if (searchTerm) {
+                    alert(`Searching for: ${searchTerm}`);
+                    // In a real app, this would redirect to search results page
+                }
+            }
+        });
+    </script>
+</body>
+</html>
